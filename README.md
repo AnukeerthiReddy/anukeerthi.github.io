@@ -1,4 +1,4 @@
-# anubhavgupta.github.io
+# anukeerthireddy.github.io
 Portfolio for Anubhav Gupta
 
 Based on the template from start bootstrap
