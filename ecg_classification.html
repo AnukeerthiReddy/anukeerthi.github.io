@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Anukeerthi Reddy</title>
+    <link rel="shortcut icon" href="img/a-icon.ico" />
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll"  href="index.html">Home</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 text-center" style="text-align: left">
+                    <!-- <hr class="light"> -->
+                    <h2 style="font-style: italic">ECG Heartbeat Categorization  
+                        using Neural Networks<h2>
+                    <h4>INTRODUCTION</h4>
+                    <p class="text-faded" style="font-size: small">
+                    CARDIOVASCULAR diseases (CVDs) such as myocardial infarction, cardiomyopathy and myocarditis are the leading causes of death in the world.According to the 
+                    American Heart Association (AHA), 90% of patients cannot recognize themselves as being at high risk 
+                    before a cardiac attack.Electrocardiogram (ECG) signal represents electrical activities of 
+                    the heart and is widely used in detection and classification of cardiac arrhythmias.Early detection and continuous monitoring can significantly improve treatment outcomes and the 
+                    solution is literally on your hands- HMSs(Health monitoring systems) IoT, BigData Processing are the 
+                    key for accurate arrhythmia detection.</p>
+                    <h4>SOLUTION APPROACH</h4>
+                    <p class="text-faded" style="font-size: small"> Develop a machine learning model to automate the interpretation of ECG signals. Trained on diverse ECG data, the model captures intricate patterns indicative of cardiac abnormalities, providing healthcare professionals with a reliable tool to expedite accurate diagnoses and interventions. </p>
+                    <h4>PRIMARY GOAL</h4>
+                    <p class="text-faded" style="font-size: small"> To develop a robust machine learning model for accurately classifying ECG signals, focusing on distinguishing between normal and abnormal cases. The model aims to provide detailed classification, identifying specific cardiac abnormalities such as Normal beat (N), Atrial Premature beat (S), Premature Ventricular contraction (V), Fusion beat (F), and Paced Beat (Q). </p>  </p>  
+                    <h4>DATA</h4>
+                    <p class="text-faded" style="font-size: small">
+                        The dataset, sourced from the MIT-BIH Arrhythmia Database, comprises 109,446 samples across 5 categories with a sampling frequency of 125Hz.
+                        Classes: N: Normal beat(0), S: Atrial Premature beat(1), V: Premature Ventricular contraction(2), F: 
+Fusion of ventricular and normal beat(3), Q: Paced Beat(4) 
+                    Source of the dataset: https://www.physionet.org/content/mitdb/1.0.0/ 
+                    <br><br>
+                    Initial Dataset was imbalance with different classes as shown the n: class was about 82.8%, while 
+class f: was about 0.7%, this imbalance would lead to a bias model.
+                    <br><br>
+                    Upsampling addresses class imbalance by increasing the number of instances in minority classes. This 
+involves randomly resampling instances from each minority class to match the size of the majority 
+class, ensuring a balanced dataset for improved model performance.  
+                    <h4>APPROACH</h4>
+                    <p class="text-faded" style="font-size: small">
+                        The dataset exhibits temporal behavior, evident from observed graphs, indicating underlying temporal 
+                        patterns. Traditional machine learning models may struggle to capture these nuances effectively. 
+                        However, Neural Networks, such as Convolutional Neural Networks (CNNs) and Recurrent Neural 
+                        Networks (RNNs) with Long Short-Term Memory (LSTM) architecture, are well-suited to handle 
+                        temporal data. Their ability to learn from sequential information makes them ideal for capturing and 
+                        leveraging the temporal patterns present in the dataset, potentially leading to more accurate results. 
+                
+                    </p>
+                     <h4>ALGORITHMS USED</h4>
+                    <p class="text-faded" style="font-size: small">
+                        To classify the data into five distinct classes, various classification algorithms can be employed.
+                    <ul class="text-faded" style="font-size: small">
+                        <li>
+                        Classification Models
+                            <ul>
+                                <li>Support Vector Machines</li>
+                                <li>Random Forests</li>
+                                <li>XGBoost (Extreme Gradient Boosting) </li>
+                            </ul>
+                        </li>
+                        <li>
+                        Neural Network Models
+                            <ul>
+                                <li>CNN+LSTM</li>
+                                <p>Convolutional Layers: Consist of 3 layers with ReLU activation, followed by Batch Normalization and 
+                                    MaxPooling1D operations. 
+                                    LSTM Layers: Comprises of 1 LSTM layer, The output of the CNN layers, represented by pool3, is then 
+                                    fed into the LSTM layer </p>
+                            </ul>
+                        </li>
+                    </ul>
+                    </p>
+                   <a href="https://docs.google.com/a/berkeley.edu/presentation/d/1MjarAfW8HOpCPedzbrOp2zSfMudOb0rdCWuctHULB8M/edit?usp=sharing"class="btn btn-primary btn-xl page-scroll" target="_blank">View Presentation</a>
+                </div>
+                <div class="col-lg-4 text-center" style="padding-top: 100px">
+                    <p>Data</p>
+                <img src="img/ecg_classification/data_1.png" class="img-responsive" alt="" style="margin :auto">
+                <img src="img/ecg_classification/data_2.png" class="img-responsive" alt="" style="margin :auto">
+                <!-- <img src="img/ecg_classification/data_3.png" class="img-responsive" alt="" style="margin :auto"> -->
+                <p>Confusion Matrix</p>
+                <img src="img/ecg_classification/conusion_matrix.png" class="img-responsive" alt="" style="margin :auto">
+                <p>Model Evaluation</p>
+                <img src="img/ecg_classification/model_evaluation.png" class="img-responsive" alt="" style="margin :auto">
+                <p>CNN+LSTM Model performance</p>
+                <img src="img/ecg_classification/CNNLSTM_evaluation.png" class="img-responsive" alt="" style="margin :auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="row" class="call-to-action">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Get In Touch!</h2>
+                    <hr class="primary">
+                </div>
+                <div class="col-lg-2 col-lg-offset-3 text-center">
+                    <a href="https://github.com/AnukeerthiReddy" class="fa fa-github fa-3x wow bounceIn"></a>
+                </div>
+                <div class="col-lg-2  text-center">
+                    <a href="https://www.linkedin.com/in/anukeerthi-reddy/" class="fa fa-linkedin fa-3x wow bounceIn"></a>
+                </div>
+                <!--div class="col-lg-1 text-center">
+                    <a class="fa fa-phone fa-3x wow bounceIn"></i>
+                </div-->
+                <div class="col-lg-2 text-center">
+                    <a href="mailto:apothepalli1@student.gsu.edu" class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+
+</body>
+
+</html>

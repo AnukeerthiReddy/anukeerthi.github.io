@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Anukeerthi Reddy</title>
+    <link rel="shortcut icon" href="img/a-icon.ico" />
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll"  href="index.html">Home</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 text-center" style="text-align: left">
+                    <!-- <hr class="light"> -->
+                    <h2 style="font-style: italic">Tailored User Recommendations<h2>
+                    <h4>THE PROBLEM</h4>
+                    <p class="text-faded" style="font-size: small">
+                    As users continuously review locations they visit, an image is formed of what a user looks for in shopping stores and restaurants. Despite this source of data, Yelp fails to recommend users a prefiltered list of businesses based on their previous reviews. Our solution is to help the users get better recommendations and enhance their experience. By creating user profiles made of common key words in their reviews, we can tailor recommendations based on their needs and wants. These tailored recommendations would lead to increased engagement in Yelp’s services. .</p>
+                    <h4>SOLUTION</h4>
+                    <p class="text-faded" style="font-size: small">
+                        We developed an advanced recommendation system that suggests restaurants users are most likely to enjoy. Our system analyzes user reviews to identify individuals with similar tastes and preferences. By considering the reviews from these like-minded users, we can offer highly personalized and relevant restaurant recommendations.
+                    </p>
+                    <h4>DATA</h4>
+                    <p class="text-faded" style="font-size: small">
+                    The dataset utilized for this project consisted of circa 5.5 million user reviews for shops, restaurants, and other places of business.
+                    </p>
+                    <h4>TECHNOLOGIES USED</h4>
+                    <p class="text-faded" style="font-size: small">
+                        - <b style="color: #f5f5f5;">Cloud Computing Resources</b>: Utilized cloud clusters to handle large datasets efficiently.<br>
+                        - <b style="color: #f5f5f5;">Data Preparation:</b> Employed PySpark functions such as MAP and reduce for data processing.<br>
+                        - <b style="color: #f5f5f5;">Recommendation System:</b>Built using PySpark's minLSH to calculate similarities.<br>
+                        - <b style="color: #f5f5f5;">Recommendation Generation:</b>Based on the similarity values obtained from minLSH.<br>
+                    </p>
+                    <h4>APPROACH</h4>
+                    <p class="text-faded" style="font-size: small">
+                        - <b style="color: #f5f5f5;">Data Preprocessing:</b><br>
+                        - Convert user ratings to float and create a "label" column using PySpark.<br>
+                        - Tokenize, remove stop words, and lemmatize review text using PySpark RDDs.<br>
+                        - Run preprocessing code on a cluster for efficiency.
+                    </p>
+                    <p class="text-faded" style="font-size: small">
+                        - <b style="color: #f5f5f5;">Filtering Users and Businesses:</b> <br>
+                        -Focus on restaurant data only.<br>
+                        - Exclude users with fewer than 20 reviews using PySpark DataFrames.<br>
+                        - Rebuild user profiles using only 4-star and 5-star reviews.<br>
+                        - Extract business profiles from filtered user reviews.
+                    </p>
+                    <p class="text-faded" style="font-size: small">
+                        - <b style="color: #f5f5f5;">Review Processing and Aggregation:</b><br>
+                        - Store reviews with corresponding restaurants in PySpark DataFrames.<br>
+                        - Tokenize, lemmatize, and aggregate reviews to create final profiles.
+                    </p>
+                
+                    <h4>Implementation</h4>
+                    <p class="text-faded" style="font-size: small">
+                        - Load data into PySpark DataFrames.<br>
+                        - Aggregate top words for users and businesses using user-defined functions in PySpark.<br>
+                        - Initially implemented locality-sensitive hashing (LSH) for clustering, then considered fuzzy hashing.<br>
+                        - Chose final method for more reliable results.<br>
+                        - Average rating not used; recommendations based on cosine similarity of TF-IDF vectors.<br>
+                        - Transform dataframes with TF-IDF vectorizer in PySpark.<br>
+                        - Calculate cosine similarity between user and restaurant profiles; return top 5 recommendations.
+                    </p>
+                    <h4>Results & Evaluation</h4>
+    <p class="text-faded" style="font-size: small">
+                        - Developed a Leave One Out (LOO) evaluation system to predict user preferences based on historical reviews.<br>
+                        - Split each user's reviews into training and test sets: training with all but one review, test with the held-out review.<br>
+                        - Evaluated predictive accuracy using metrics: precision, recall, accuracy, mean average precision (MAP), and normalized discounted cumulative gain (NDCG).<br>
+                        - Achieved a MAP score of 0.153836 and an NDCG score of 0.300671.<br>
+    </p>
+                    </ul> 
+                   <!-- <a href="https://docs.google.com/presentation/d/1ewfbc-4nWLGnuFK5DeA7jikWK7DlALVheyr765B7KA8/edit?usp=sharing" class="btn btn-primary btn-xl page-scroll" target="_blank">View Presentation</a> -->
+                   <!-- <a href="https://skfb.ly/NLSW" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: ">Link to 4d Design</a> -->
+                   <!-- <a href="https://docs.google.com/a/berkeley.edu/document/d/1vtCwW_MkwTBmH51UHi6HuffCid3kYy5zv86zx1g8YSg/edit?usp=sharing" class="btn btn-primary btn-xl page-scroll" target="_blank">Link to Project Report</a> -->
+                </div>
+                <div class="col-lg-4 text-center" style="padding-top: 100px">
+                <!-- <img src="img/hydrobase/hydrobase1.png" class="img-responsive" alt="" style="margin :auto" height="300" width="300"> -->
+                <p>Computing Cluster Utility</p>
+                <img src="img/yelp_scalable/Cluster.png" class="img-responsive" alt="" style="margin :auto" height="300" width="300"> -->
+                <!-- <p>Real Time Data Visulaizations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="row" class="call-to-action">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Get In Touch!</h2>
+                    <hr class="primary">
+                </div>
+                <div class="col-lg-2 col-lg-offset-3 text-center">
+                    <a href="https://github.com/AnukeerthiReddy" class="fa fa-github fa-3x wow bounceIn"></a>
+                </div>
+                <div class="col-lg-2  text-center">
+                    <a href="https://www.linkedin.com/in/anukeerthi-reddy/" class="fa fa-linkedin fa-3x wow bounceIn"></a>
+                </div>
+                <!--div class="col-lg-1 text-center">
+                    <a class="fa fa-phone fa-3x wow bounceIn"></i>
+                </div-->
+                <div class="col-lg-2 text-center">
+                    <a href="mailto:apothepalli1@student.gsu.edu" class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+
+</body>
+
+</html>
