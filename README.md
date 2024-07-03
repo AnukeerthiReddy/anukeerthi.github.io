@@ -1,5 +1,5 @@
 # anukeerthireddy.github.io
-Portfolio for Anubhav Gupta
+Portfolio for Anukeerthi Reddy Pothepalli
 
 Based on the template from start bootstrap
 http://startbootstrap.com/template-overviews/creative/
