@@ -92,39 +92,38 @@
                         <li class="text-faded" style="font-size: small">Implementation Tools: TensorFlow and Keras libraries with Python.</li>
                     </p>
                     
-                    
+                    <h4>Implementation</h4>
                     <p class="text-faded" style="font-size: small">
                     To implement the meme-karaoke mash-up, the following shows the breakdown of features that were initially proposed and what were eventually implemented in the application:
                     <ul class="text-faded" style="font-size: small">
                         <li>
-                        We offer the user a curated list of popular artists to choose from, after which we generate a list of recent songs for each artist (for which both audio and lyrics exist) that the user can select to sing.</li>
+                            Model Training: Trained the GAN on a high-performance GPU for multiple epochs to ensure the generator could produce high-quality images.</li>
                         <li>
-                        Once a song is selected, lyrics are sourced from the Musixmatch API which returns them in JSON format. Not all lyrics are returned, and there are also no timings for the lyrics due to limitations imposed by the free Musixmatch service. A “demo” feature was created to illustrate how the service would have looked like with timed lyrics.</li>
+                            Optimization: Applied techniques like batch normalization and dropout to prevent overfitting and improve model generalization.</li>
                         <li>
-                        Memes shown are based on the name of the artist chosen (as the Musixmatch API only returns a fraction of the lyrics) and are sourced from the Giphy API. Only the first 20 memes are taken by the application.</li>
+                            Evaluation: Used metrics such as Structural Similarity Index (SSIM) and Peak Signal-to-Noise Ratio (PSNR) to assess the quality of generated images. Included loss evaluation using BinaryCrossentropy</li>
                         <li>
-                        Memes are displayed 5 seconds at a time. Sound pitch variance was not implemented.</li>
-                        <li>
-                        The recording feature was not implemented due to limitations of the APIs used. The URL-shortening service can still be used to share the meme-karaoke mash-up though.</li>
+                            Image Generation: Defined a function generate_images to visualize the model's predictions alongside the input and ground truth images.</li>
                     </ul>
                     </p>
                     <h4>Technical Details</h4>
                     <p class="text-faded" style="font-size: small">
                     <ul class="text-faded" style="font-size: small">
-                        <li>Front-End: HTML, CSS, JavaScript, and the Bootstrap responsive framework</li>
-                        <li>Back-End: Python Flask, SQLite</li>
-                        <li>APIs: Musixmatch API, Giphy API, SoundCloud API</li>
+                        <li>Programming Languages: Python</li>
+                        <li>Libraries and Frameworks: TensorFlow, Keras, NumPy, Matplotlib</li>
+                        <li>Hardware: High-performance GPU for training</li>
+                        <li>Tools: Jupyter Notebook, Google Colab</li>
                     </ul>
                     </p>
-                   <a href="https://docs.google.com/presentation/d/1UDN5HxbpweY2c4MI_gL5dUsB51p-buak1FnO2UGGZC0/edit?usp=sharing" class="btn btn-primary btn-xl page-scroll" target="_blank">View Presentation</a>
+                   <!-- <a href="https://docs.google.com/presentation/d/1UDN5HxbpweY2c4MI_gL5dUsB51p-buak1FnO2UGGZC0/edit?usp=sharing" class="btn btn-primary btn-xl page-scroll" target="_blank">View Presentation</a> -->
                 </div>
                 <div class="col-lg-4 text-center" style="padding-top: 100px">
-                <img src="img/memeoke/memeoke1.png" class="img-responsive" alt="" style="margin :auto">
-                <p>Synced Lyrics Demo Using LRC Files</p>
-                <img src="img/memeoke/memeoke2.png" class="img-responsive" alt="" style="margin :auto">
-                <p>"Select an Artist" Interface</p>
-                <img src="img/memeoke/memeoke3.png" class="img-responsive" alt="" style="margin :auto">
-                <p>"Song Playing" Interface</p>
+                <p>Model Output</p>
+                <img src="img/pix2pix/model_out.png" class="img-responsive" alt="" style="margin :auto">
+                <img src="img/pix2pix/model_output.png" class="img-responsive" alt="" style="margin :auto">
+                <!-- <p>"Select an Artist" Interface</p> -->
+                <img src="img/pix2pix/Model_performance.png" class="img-responsive" alt="" style="margin :auto">
+                <!-- <p>"Song Playing" Interface</p> -->
                 </div>
             </div>
         </div>
